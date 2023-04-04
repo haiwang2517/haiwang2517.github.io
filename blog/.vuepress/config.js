@@ -83,5 +83,10 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  plugins: ['@vuepress/active-header-links']
+  plugins: [['@vuepress/active-header-links'],
+  ['copy', 
+  {
+    // 将目录下的所有内容复制到 public 目录中
+    patterns: ['blog/.vuepress/public/**/*'],
+  }]]
 }  
