@@ -9,15 +9,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      run: |
-        ls -la
-        ls blog -la
     - name: SetNodeVersion
       uses: actions/setup-node@v3
       with:
         node-version: 18.12.1
     - name: Build
       run: | 
+        ls -la
+        ls blog -la
         npm install 
         npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
