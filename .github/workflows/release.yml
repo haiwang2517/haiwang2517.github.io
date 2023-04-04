@@ -24,12 +24,11 @@ jobs:
         npm run linux-build 
         ls -l 
         echo 'blog.haiyinlong.cn' > public/CNAME
-        echo secrets.ACCESS_TOKEN
         echo ${{secrets.ACCESS_TOKEN}}
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v2
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         BRANCH: gh-pages
-        FOLDER: public/
+        FOLDER: public
     
