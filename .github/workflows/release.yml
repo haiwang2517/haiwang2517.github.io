@@ -1,4 +1,4 @@
-name: release docs CI
+name: master-build-pages
 on: 
   push:
     branches:
@@ -17,14 +17,10 @@ jobs:
         node-version: 18.12.1
     - name: Build
       run: | 
-        npm -v
-        node -v
-        pwd
         npm install 
-        npm run linux-build 
-        ls -l 
+        npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
-        echo ${{secrets.ACCESS_TOKEN}}
+        ls -l
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
