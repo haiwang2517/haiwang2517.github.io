@@ -9,12 +9,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: InstalNpm
-      uses: rreichel3/vuepress-github-actions-deploy@master
-      run: |
-        npm install
-        npm run build
- 
+    # - name: InstalNpm
+    #   uses: rreichel3/vuepress-github-actions-deploy@master
+    #   run: |
+    #     npm install
+    #     npm run build
     # - name: Build and Deploy
     #   uses: rreichel3/vuepress-github-actions-deploy@master
     #   env:
