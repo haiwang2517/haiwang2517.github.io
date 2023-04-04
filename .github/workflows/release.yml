@@ -15,13 +15,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 18.12.1
-    - name: CheckoutPrint
+    - name: Build
       run: | 
         npm -v
         node -v
         pwd
         npm install 
-        npm run build 
+        npm run linux-build 
         ls -l 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v2
