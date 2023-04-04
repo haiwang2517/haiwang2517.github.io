@@ -8,36 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
-
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
+      uses: actions/checkout@v3
+    - name: SetNodeVersion
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.12.1
+    - name: Build
+      run: | 
+        ls -la
+        ls blog -la
+        npm install 
+        npm run linux-build  
+        echo 'blog.haiyinlong.cn' > public/CNAME
+        cp blog/.vuepress/public public
+        ls public -la
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v4
+      with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BUILD_SCRIPT: npm install && npm run linux-build && cp blog/.vuepress/public public
-        BUILD_DIR: public
-        CNAME: blog.haiyinlong.cn
-  # build-and-deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Checkout
-  #     uses: actions/checkout@v3
-  #   - name: SetNodeVersion
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: 18.12.1
-  #   - name: Build
-  #     run: | 
-  #       ls -la
-  #       ls blog -la
-  #       npm install 
-  #       npm run linux-build  
-  #       echo 'blog.haiyinlong.cn' > public/CNAME
-  #       ls public -la
-  #   - name: Deploy
-  #     uses: JamesIves/github-pages-deploy-action@releases/v4
-  #     with:
-  #       ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-  #       BRANCH: gh-pages
-  #       FOLDER: public
+        BRANCH: gh-pages
+        FOLDER: public
     
