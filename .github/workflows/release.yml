@@ -9,16 +9,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: InstalNpm
+    - name: CheckoutPrint
       run: |
         ls -l
         pwd
-    # - name: Build and Deploy
-    #   uses: rreichel3/vuepress-github-actions-deploy@master
-    #   env:
-    #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    #     BUILD_DIR: public/ # The folder, the action should deploy.
-    #     BUILD_SCRIPT: npm install && npm run build # The build script the action should run prior to deploying.
-    #     PAGES_CNAME: blog.haiyinlong.cn
+    - name: Build and Deploy
+      uses: rreichel3/vuepress-github-actions-deploy@master
+      env:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BUILD_DIR: public/ # The folder, the action should deploy.
+        BUILD_SCRIPT: npm install && npm run build # The build script the action should run prior to deploying.
+        PAGES_CNAME: blog.haiyinlong.cn
     #   参考 : https://github.com/keidarcy/shiny-octo-system-blog/blob/master/.github/workflows/main.yml
     
