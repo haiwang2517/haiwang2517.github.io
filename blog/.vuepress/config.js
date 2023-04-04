@@ -84,9 +84,14 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [['@vuepress/active-header-links'],
-  ['copy', 
+  ['copy',
   {
-    // 将目录下的所有内容复制到 public 目录中
-    patterns: ['blog/.vuepress/public/**/*'],
+    patterns: [
+      {
+        from: 'blog/.vuepress/public',
+        to: 'public',
+        noErrorOnMissing: true, // 如果文件不存在则跳过
+      },
+    ],
   }]]
 }  
