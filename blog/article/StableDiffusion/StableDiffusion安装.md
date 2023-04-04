@@ -58,7 +58,7 @@ cd stable-diffusion-webui
 ### 3. 本地配置stable diffusion
 
 #### __webui-user.bat配置__
-```bat
+```bash
 @echo off
 # 指定python路径
 set PYTHON="C:\Python310\python.exe"
@@ -115,6 +115,7 @@ __具体改动项__
 git config http.sslVerify "false"
 
 ```
+
 * 启动异常时,删除再启动
 ```bash
 #如果有异常删除 venv 文件夹
@@ -153,17 +154,17 @@ __最终效果__
 
 
 提示词:
-```text
+```plaintext
 (extremely detailed CG unity 8k wallpaper), full shot body photo of [Emma Stone | emma watson] as princess peach, smiling, nostalgia, fantasy, princess peach clothes, sexy, professional majestic oil painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, by midjourney and greg rutkowski, realism, beautiful and detailed lighting, shadows, by Jeremy Lipking, by Antonio J. Manzanedo, by Frederic Remington, by HW Hansen, by Charles Marion Russell, by William Herbert Dunton, Pin-up, Skater, Otaku, cinematic 
 ```
 
 反提示词:
-```text
+```plaintext
 Negative prompt: hat, disfigured, kitsch, ugly, oversaturated, grain, low-res, Deformed, blurry, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, ugly, disgusting, poorly drawn, childish, mutilated,, mangled, old, surreal, text, blurry, b&w, monochrome, conjoined twins, multiple heads, extra legs, extra arms, fashion photos (collage: 1,25), meme,deformed,elongated,twisted,fingers,strabismus,heterochromia,closed eyes,blurred, watermark, wedding,group 
 ```
 
 参数配置:
-```text
+```plaintext
 Steps: 50, Sampler: DPM++ SDE Karras, CFG scale: 10, Seed: 3816429603, Size: 640x832, Model hash: c88e730a
 ```
 
