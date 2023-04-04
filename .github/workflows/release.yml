@@ -9,8 +9,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        persist-credentials: false
     - name: SetNodeVersion
       uses: actions/setup-node@v3
       with:
@@ -20,7 +18,7 @@ jobs:
         npm install 
         npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
-        cp blog/.vuepress/public public
+        ls -l
         ls public -l
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4
