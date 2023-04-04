@@ -1,11 +1,11 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "author": "Ken",
+  "author": "Ken Hai",
   "scripts": {
     "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress dev blog",
     "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vuepress build blog",
-    "linux-build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build blog"
+    "linux-build": "vuepress build blog"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.5.2",
