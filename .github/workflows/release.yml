@@ -20,6 +20,7 @@ jobs:
         npm install 
         npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
+        cp blog/.vuepress/public public
         ls public -l
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4
