@@ -20,7 +20,7 @@ jobs:
         npm install 
         npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
-        ls -l
+        ls public -l
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
