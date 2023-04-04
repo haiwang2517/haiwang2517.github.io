@@ -83,16 +83,5 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  plugins: [
-    ['@vuepress/active-header-links'],
-    ['copy', {
-        patterns: [
-          {
-            from: 'blog/.vuepress/public',
-            to: 'public',
-            noErrorOnMissing: true
-          }
-        ]
-    }]
-  ]
+  plugins: [['@vuepress/active-header-links']]
 }  

@@ -4,45 +4,45 @@ on:
     branches:
       - master
 jobs:
-  # build-and-deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Checkout
-  #     uses: actions/checkout@master
-
-  #   - name: vuepress-deploy
-  #     uses: jenkey2011/vuepress-deploy@master
-  #     env:
-  #       ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-  #       BUILD_SCRIPT: npm install && npm run linux-build && cp blog/.vuepress/public public
-  #       BUILD_DIR: public
-  #       CNAME: blog.haiyinlong.cn
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-    - name: SetNodeVersion
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.12.1
-    - name: Build
-      run: | 
-        ls blog -la
-        ls blog/.vuepress -la
-        npm install 
-        npm run linux2-build  
-        echo 'blog.haiyinlong.cn' > public/CNAME
-        pwd
-        ls -la
-        ls blog -la
-        ls blog/.vuepress -la
-        cp -r blog/.vuepress/public/ public/
-        ls public -la
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
-      with:
+      uses: actions/checkout@master
+
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: public
+        BUILD_SCRIPT: npm install && npm run linux-build
+        BUILD_DIR: public
+        CNAME: blog.haiyinlong.cn
+  # build-and-deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v3
+  #   - name: SetNodeVersion
+  #     uses: actions/setup-node@v3
+  #     with:
+  #       node-version: 18.12.1
+  #   - name: Build
+  #     run: | 
+  #       ls blog -la
+  #       ls blog/.vuepress -la
+  #       npm install 
+  #       npm run linux2-build  
+  #       echo 'blog.haiyinlong.cn' > public/CNAME
+  #       pwd
+  #       ls -la
+  #       ls blog -la
+  #       ls blog/.vuepress -la
+  #       cp -r blog/.vuepress/public/ public/
+  #       ls public -la
+  #   - name: Deploy
+  #     uses: JamesIves/github-pages-deploy-action@releases/v4
+  #     with:
+  #       ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+  #       BRANCH: gh-pages
+  #       FOLDER: public
     
