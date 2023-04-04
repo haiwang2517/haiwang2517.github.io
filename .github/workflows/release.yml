@@ -9,6 +9,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      run: |
+        ls -la
+        ls blog -la
     - name: SetNodeVersion
       uses: actions/setup-node@v3
       with:
@@ -18,8 +21,7 @@ jobs:
         npm install 
         npm run linux-build  
         echo 'blog.haiyinlong.cn' > public/CNAME
-        ls -l
-        ls public -l
+        ls public -la
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
