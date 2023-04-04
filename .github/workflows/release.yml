@@ -20,17 +20,19 @@ jobs:
         npm -v
         node -v
         pwd
+        npm install 
+        npm run build 
     - name: Deploy
-      # uses: JamesIves/github-pages-deploy-action@releases/v2
-      # with:
-      #     ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-      #     BRANCH: gh-pages
-      #     FOLDER: public/
-      uses: rreichel3/vuepress-github-actions-deploy@master
-      env:
+      uses: JamesIves/github-pages-deploy-action@releases/v2
+      with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BUILD_DIR: public/ # The folder, the action should deploy.
-        BUILD_SCRIPT: npm install && npm run build # The build script the action should run prior to deploying.
-        PAGES_CNAME: blog.haiyinlong.cn
+        BRANCH: gh-pages
+        FOLDER: public/
+      # uses: rreichel3/vuepress-github-actions-deploy@master
+      # env:
+      #   ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+      #   BUILD_DIR: public/ # The folder, the action should deploy.
+      #   BUILD_SCRIPT: npm install && npm run build # The build script the action should run prior to deploying.
+      #   PAGES_CNAME: blog.haiyinlong.cn
     #   参考 : https://github.com/keidarcy/shiny-octo-system-blog/blob/master/.github/workflows/main.yml
     
