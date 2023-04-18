@@ -25,7 +25,11 @@ categories:
 
 
 
-## 安装步骤
+
+## 在线安装步骤
+[基于google colab 配置环境](https://colab.research.google.com/drive/1yhV28McEQgkjfkBjzZG3IVA3mjUqtz1s?usp=share_link)
+
+## 本地安装步骤
 ### 1. 环境准备
 * python3: Python 3.10.7
 * git:  2.36.1
